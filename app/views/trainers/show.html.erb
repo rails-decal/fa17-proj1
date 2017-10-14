@@ -5,11 +5,13 @@
 	<tr>
 		<th>Pokemon</th>
 		<th>Level</th>
+		<th>Health</th>
 	</tr>
 	<% @trainer.pokemons.each do |f| %>
 		<tr>
 			<td><%= f.name %></td>
 			<td><%= f.level %></td>
+			<td><%= f.health %></td>
 		</tr>
 	<% end %>
 </table>
