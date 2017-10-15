@@ -18,3 +18,4 @@ flash[:error] flashes an error, but we need to give it what to say. @pokemon.err
 # Give us feedback on the project and decal below!
 
 # Extra credit: Link your Heroku deployed app
+https://railspokeportal.herokuapp.com/
