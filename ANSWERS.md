@@ -10,8 +10,10 @@ I think 'button_to' is a method that takes in certain params. 1) The first param
 # Question 3: What would you name your own Pokemon?
 
 # Question 4: What did you pass into the redirect_to? If it is a path, what did that path need? If it is not a path, why is it okay not to have a path here?
+I redirected to the trainer_path and passed in params[:trainer_id]. I passed in :trainer_id through the show view; it's a symbol containing the id of the trainer whose pokemon you are damaging.
 
 # Question 5: Explain how putting this line "flash[:error] = @pokemon.errors.full_messages.to_sentence" shows error messages on your form.
+flash[:error] flashes an error, but we need to give it what to say. @pokemon.errors.full_messages.to_sentences seems to take the error coming from the Pokemon model, get the full message, and convert it into a sentence for flash[:error] to display.
 
 # Give us feedback on the project and decal below!
 
