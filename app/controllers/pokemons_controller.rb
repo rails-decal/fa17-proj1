@@ -10,11 +10,20 @@ class PokemonsController < ApplicationController
 	def damage
 		damage = 10;
 		mon = Pokemon.find(params[:pokemon_id])
-		mon.health -= damage;
-		mon.save!
+		mon.health -= damage
 		if mon.health <= 0
-			mon.destroy
+			mon.health = 0
 		end
+		mon.save!
+
+		redirect_to trainer_path(params[:trainer_id])
+	end
+
+	def heal
+		heal_amount = 10;
+		mon = Pokemon.find(params[:pokemon_id])
+		mon.health += heal_amount
+		mon.save!
 
 		redirect_to trainer_path(params[:trainer_id])
 	end
