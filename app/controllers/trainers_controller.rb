@@ -8,5 +8,7 @@ class TrainersController < ApplicationController
   def show
     @trainer = Trainer.find(params[:id])
   end
-
+def update
+    redirect_to(show.html.erb)
+end
 end
