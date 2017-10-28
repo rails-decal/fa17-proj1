@@ -20,8 +20,12 @@ class PokemonsController < ApplicationController
 		@pokemon.health = 100
 		@pokemon.level = 1
 		@pokemon.update(pokemon_params)
-		@pokemon.save!
-		redirect_to trainer_path(current_trainer)
+		if @pokemon.save == false
+			flash[:error] = @pokemon.errors.full_messages.to_sentence
+			redirect_to(new_path)
+		else
+			redirect_to trainer_path(current_trainer)
+		end
 	end
 	def index
     	@pokemon = Pokemon.all
