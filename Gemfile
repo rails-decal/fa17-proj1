@@ -18,6 +18,8 @@ gem 'simple_form'
 gem 'jquery-rails'
 
 gem 'annotate'
+gem 'webpacker', '~> 3.0'
+gem 'react-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
