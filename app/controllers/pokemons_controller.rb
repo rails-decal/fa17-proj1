@@ -28,11 +28,13 @@ class PokemonsController < ApplicationController
 		pokemon = Pokemon.find(params[:id])
 		pokemon.health -= 10
 		if pokemon.health <= 0
+			pokemon_name = pokemon.name
 			pokemon.destroy
+			render json: { message: pokemon_name + " has fainted!" }, status: :ok
 		else
 			pokemon.save
+			render json: pokemon
 		end
-		redirect_to trainer_path(pokemon.trainer)
 	end
 
 	private
